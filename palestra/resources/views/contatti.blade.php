@@ -8,6 +8,9 @@
       <div class="mb-3">
         <label class="form-label">Nome</label>
         <input class="form-control" name="name" type="text" placeholder="Nome" value="{{old('name')}}"/>
+        @error('name')
+        {{$message}}
+        @enderror
       </div>
   
       <!--  -->

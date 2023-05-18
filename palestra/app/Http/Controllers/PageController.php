@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\InfoMail;
+use Illuminate\Support\Facades\Mail;
 
 class PageController extends Controller
 {
@@ -43,28 +45,28 @@ class PageController extends Controller
     }
 
 
-    public function form()
-    {
-        return view('contatti');
-    }
+   
 
 public function send(Request $request){
     $request->validate([
-        "name" => "required|string",
-        "email" => "required|email",
-        "message" => "required|min:10",
+        'name' => 'required|string',
+        'email' => 'required|email',
+        'message' => 'required|min:10',
     ]);
+    
     $data = [
         "name" => $request->name,
         "email" => $request->input('email'),
         "telephone" => $request->telephone,
         "message" => $request->message,
+        
     ];
+    dd($data);
 
-    dd($request);
+  
 
 
-    return redirect()->route('homepage');
+ return redirect()->route('homepage');
    
    
 }
