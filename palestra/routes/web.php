@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [PageController::class, 'index']) -> name('homepage');
+Route::get('/homepage', [PageController::class, 'index']) -> name('homepage');
 Route::get('/corsi', [PageController::class, 'course']) -> name('corsi');
-;
+Route::get('/contatti', [PageController::class, 'contact']) -> name('contatti');
+Route::post('/send', [PageController::class, 'form']) -> name('send');
+
 
