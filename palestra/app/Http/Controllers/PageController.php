@@ -25,6 +25,7 @@ class PageController extends Controller
             [
                 'name' => 'Crossfit',
                 "room" => 2,
+                "slug"=>'Crossfit',
                 "tools" => "step",
                 "time" => "15:30",
                 "image" => 'https://media.gettyimages.com/id/503416862/it/foto/palestra-allenamento-fitness-uomo-pronto-per-lallenamento-con-kettlebell.jpg?s=612x612&w=0&k=20&c=Aiw7eTsPv3xS6QGLKWTDT5O62XzGKfY4L3fekebHSEc='
@@ -32,6 +33,7 @@ class PageController extends Controller
 
             [
                 'name' => 'Yoga',
+                "slug"=>'Yoga',
                 "room" => 8,
                 "tools" => "bilanciere",
                 "time" => "11:30",
@@ -40,6 +42,7 @@ class PageController extends Controller
 
             [
                 'name' => 'Functional',
+                "slug"=>'Functional',
                 "room" => 3,
                 "tools" => "manubri",
                 "time" => "7:30",
@@ -53,12 +56,12 @@ class PageController extends Controller
 
 
 
-    public function dettagli()
-    {
-        $course = [
+   
+      public static  $corsi = [
             'primocorso'=>[
             [
                 'name' => 'Crossfit',
+                "slug"=>'Crossfit',
                 "room" => 2,
                 "tools" => "step",
                 "time" => "15:30",
@@ -67,6 +70,7 @@ class PageController extends Controller
             'secondocorso'=>[
             [
                 'name' => 'Yoga',
+                'slug'=>'Yoga',
                 "room" => 8,
                 "tools" => "bilanciere",
                 "time" => "11:30",
@@ -75,14 +79,29 @@ class PageController extends Controller
             'terzocorso'=>[
             [
                 'name' => 'Functional',
+                'slug'=>'Functional',
                 "room" => 3,
                 "tools" => "manubri",
                 "time" => "7:30",
                 "image" => 'https://www.assigigliorosso.it/wp-content/uploads/2022/12/Supplement-Fitness.jpg'
             ]],
         ];
-        return view('detail', ['gym' => $course]);
-    }
+      
+        public function corsivisibili(){
+            return view('corsi', ['corsi'=>self::$corsi]);
+           }
+        
+           public function dettagli($ref){
+              
+              foreach(self::$corsi as $corso){
+        
+                 if($ref == $corso['slug']){
+                    return view('detail', ['corso'=>$corso]);
+                 }
+              }
+              abort(404);
+           }
+        
 
 
 
@@ -101,10 +120,7 @@ class PageController extends Controller
             "message" => $request->message,
 
         ];
-        dd($data);
-
-
-
+       // dd($data) per vedere se funziona mi prende il dd con i dati corretti;
 
         return redirect()->route('homepage');
     }

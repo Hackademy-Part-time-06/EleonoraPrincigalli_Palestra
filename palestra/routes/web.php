@@ -15,9 +15,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/homepage', [PageController::class, 'index']) -> name('homepage');
+Route::get('/homepage', [PageController::class, 'index'])->name('homepage');
 
-Route::get('/corsi', [PageController::class, 'corsi']) -> name('corsi');
+Route::get('/corsi', [PageController::class, 'corsi'])->name('corsi');
 
 Route::get('/dettagli/{ref}', [PageController::class, 'dettagli'])->name('detail');
 
@@ -25,7 +25,5 @@ Route::get('/dettagli/{ref}', [PageController::class, 'dettagli'])->name('detail
 
 
 
-Route::get('/contatti', [PageController::class, 'contact']) -> name('contatti');
-Route::post('/send', [PageController::class, 'send']) -> name('send');
-
-
+Route::get('/contatti', [PageController::class, 'contact'])->name('contatti');
+Route::post('/send', [PageController::class, 'send'])->name('send');
