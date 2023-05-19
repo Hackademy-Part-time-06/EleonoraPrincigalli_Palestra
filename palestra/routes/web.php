@@ -27,3 +27,4 @@ Route::get('/dettagli/{ref}', [PageController::class, 'dettagli'])->name('detail
 
 Route::get('/contatti', [PageController::class, 'contact'])->name('contatti');
 Route::post('/send', [PageController::class, 'send'])->name('send');
+Route::get('/', [PageController::class, 'thanks'])->name('grazie');

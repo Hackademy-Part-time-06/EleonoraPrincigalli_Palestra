@@ -98,7 +98,10 @@ class PageController extends Controller
            }
         
 
-
+           public function thanks()
+           {
+               return view('grazie');
+           }
 
     public function send(Request $request)
     {
@@ -117,6 +120,6 @@ class PageController extends Controller
         ];
        // dd($data) per vedere se funziona mi prende il dd con i dati corretti;
 
-        return redirect()->route('homepage');
+        return redirect()->route('grazie');
     }
 }
