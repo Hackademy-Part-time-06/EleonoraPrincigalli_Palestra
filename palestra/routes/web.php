@@ -15,13 +15,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/homepage', [PageController::class, 'index']) -> name('homepage');
-Route::get('/corsi', [PageController::class, 'course']) -> name('corsi');
+
+Route::get('/homepage', [PageController::class, 'corsi']); 
+
+Route::get('/dettagli/{ref}', [PageController::class, 'dettagli'])->name('detail');
+
+
+
+
+
 Route::get('/contatti', [PageController::class, 'contact']) -> name('contatti');
-Route::post('/send', [PageController::class, 'contact']) -> name('send');
+Route::post('/send', [PageController::class, 'send']) -> name('send');
 
 

@@ -21,10 +21,10 @@
 
 <body id="page-top">
     <x-navbar />
-    <x-head />
+
 
     {{ $slot }}
-<x-footer/>
+    <x-footer />
 </body>
 
 </html>
