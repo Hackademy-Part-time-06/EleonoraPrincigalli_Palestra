@@ -22,7 +22,7 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">La lezione si terrà nell'aula: {{ $corso['room'] }}</li>
                                 <li class="list-group-item">Alle ore: {{ $corso['time'] }}</li>
-                                <li class="list-group-item">Strumenti da utilizzare: {{ $corso['tools'] }}</li>
+                                <li class="list-group-item">Strumenti: {{ $corso['tools'] }}</li>
 
                             </ul>
 
@@ -41,7 +41,7 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">La lezione si terrà nell'aula: {{ $corso['room'] }}</li>
                                 <li class="list-group-item">Alle ore: {{ $corso['time'] }}</li>
-                                <li class="list-group-item">Strumenti da utilizzare: {{ $corso['tools'] }}</li>
+                                <li class="list-group-item">Strumenti: {{ $corso['tools'] }}</li>
 
                             </ul>
 
@@ -60,7 +60,7 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">La lezione si terrà nell'aula: {{ $corso['room'] }}</li>
                                 <li class="list-group-item">Alle ore: {{ $corso['time'] }}</li>
-                                <li class="list-group-item">Strumenti da utilizzare: {{ $corso['tools'] }}</li>
+                                <li class="list-group-item">Strumenti: {{ $corso['tools'] }}</li>
 
                             </ul>
 

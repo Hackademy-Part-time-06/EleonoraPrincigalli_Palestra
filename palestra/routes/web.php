@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 
 Route::get('/homepage', [PageController::class, 'index']) -> name('homepage');
 
-Route::get('/homepage', [PageController::class, 'corsi']); 
+Route::get('/corsi', [PageController::class, 'corsi']) -> name('corsi');
 
 Route::get('/dettagli/{ref}', [PageController::class, 'dettagli'])->name('detail');
 

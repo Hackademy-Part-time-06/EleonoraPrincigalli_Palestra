@@ -1,6 +1,6 @@
 <x-main>
-
-<div class="container py-4">
+<x-head/>
+<div class="container py-4 ">
 
     <form action="{{route('send')}}" method="POST">
         @method('post')

@@ -18,10 +18,6 @@ class PageController extends Controller
         return view('contatti');
     }
 
-    public function course()
-    {
-        return view('corsi');
-    }
 
     public function corsi()
     {
@@ -51,7 +47,7 @@ class PageController extends Controller
             ],
         ];
 
-        return view('homepage', ['gym' => $course]);
+        return view('corsi', ['gym' => $course]);
     }
 
 
