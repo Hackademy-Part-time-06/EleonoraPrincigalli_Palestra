@@ -53,43 +53,38 @@ class PageController extends Controller
         return view('corsi', ['gym' => $course]);
     }
 
-
-
-
    
-      public static  $corsi = [
+      public static  $corsi = 
+      [
             'primocorso'=>[
-            [
+            
                 'name' => 'Crossfit',
                 "slug"=>'Crossfit',
                 "room" => 2,
                 "tools" => "step",
                 "time" => "15:30",
                 "image" => 'https://media.gettyimages.com/id/503416862/it/foto/palestra-allenamento-fitness-uomo-pronto-per-lallenamento-con-kettlebell.jpg?s=612x612&w=0&k=20&c=Aiw7eTsPv3xS6QGLKWTDT5O62XzGKfY4L3fekebHSEc='
-            ]],
+            ],
             'secondocorso'=>[
-            [
+            
                 'name' => 'Yoga',
                 'slug'=>'Yoga',
                 "room" => 8,
                 "tools" => "bilanciere",
                 "time" => "11:30",
                 "image" => 'https://www.assigigliorosso.it/wp-content/uploads/2022/12/anupam-mahapatra-Vz0RbclzG_w-unsplash-scaled.jpg'
-            ]],
+            ],
             'terzocorso'=>[
-            [
+            
                 'name' => 'Functional',
                 'slug'=>'Functional',
                 "room" => 3,
                 "tools" => "manubri",
                 "time" => "7:30",
                 "image" => 'https://www.assigigliorosso.it/wp-content/uploads/2022/12/Supplement-Fitness.jpg'
-            ]],
+            ],
         ];
       
-        public function corsivisibili(){
-            return view('corsi', ['corsi'=>self::$corsi]);
-           }
         
            public function dettagli($ref){
               
