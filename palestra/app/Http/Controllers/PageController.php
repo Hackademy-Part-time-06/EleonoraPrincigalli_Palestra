@@ -116,9 +116,13 @@ class PageController extends Controller
             "email" => $request->input('email'),
             "telephone" => $request->telephone,
             "message" => $request->message,
-
         ];
+
+        Mail::to($request->email())->send(new InfoMail($data));
        // dd($data) per vedere se funziona mi prende il dd con i dati corretti;
+
+
+       //AGGIUNGI L'INVIO DEI DATI CREANDO LA CLASSE MAIL
 
         return redirect()->route('grazie');
     }
